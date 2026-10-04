@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: signature-validation
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 25MB
+
+dss:
+  validation:
+    level: ARCHIVAL_DATA
+    max-total-upload-bytes: 20971520
+    network-timeout-millis: 10000
+    # Only explicit administrator-provided trust anchors. Empty means no trusted certificates.
+    trusted-certificates: []
+    # policy: file:C:/dss/config/validation-policy.xml

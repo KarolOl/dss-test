@@ -1,0 +1,695 @@
+{
+  "documentName": "document.pdf",
+  "containerType": null,
+  "documentStatus": "ANALYZED",
+  "defaultValidationTime": "2026-10-04T13:30:00.427Z",
+  "signaturesCount": 3,
+  "validSignaturesCount": 2,
+  "signatures": [
+    {
+      "signatureId": "sig-1",
+      "original": {
+        "source": "DEFAULT_VALIDATION",
+        "validationTime": "2026-10-04T13:30:00.427Z",
+        "format": "PAdES",
+        "level": "PAdES_BASELINE_T",
+        "qualification": "NA",
+        "signingTime": "2026-09-25T10:00:00Z",
+        "bestSignatureTime": "2026-09-25T10:01:00Z",
+        "indication": "TOTAL_PASSED",
+        "subIndication": null,
+        "errors": [],
+        "warnings": [],
+        "qualificationErrors": [],
+        "qualificationWarnings": [],
+        "counterSignature": false,
+        "parentSignatureId": null,
+        "signingCertificate": {
+          "certificateId": "cert-1",
+          "subject": "CN=Example Signer cert-1",
+          "issuer": "CN=Example Root CA",
+          "serialNumber": "1001",
+          "notBefore": "2023-01-01T00:00:00Z",
+          "notAfter": "2028-01-01T00:00:00Z",
+          "trustAnchor": false,
+          "revocationData": [
+            {
+              "revocationId": "ocsp-cert-1",
+              "type": "OCSP",
+              "status": "GOOD",
+              "reason": null,
+              "revocationTime": null,
+              "productionTime": "2026-10-04T12:00:00Z",
+              "thisUpdate": "2026-10-04T12:00:00Z",
+              "nextUpdate": "2026-10-05T12:00:00Z"
+            }
+          ]
+        },
+        "trustedChain": true,
+        "certificateChain": [
+          {
+            "certificateId": "cert-1",
+            "subject": "CN=Example Signer cert-1",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1001",
+            "notBefore": "2023-01-01T00:00:00Z",
+            "notAfter": "2028-01-01T00:00:00Z",
+            "trustAnchor": false,
+            "revocationData": [
+              {
+                "revocationId": "ocsp-cert-1",
+                "type": "OCSP",
+                "status": "GOOD",
+                "reason": null,
+                "revocationTime": null,
+                "productionTime": "2026-10-04T12:00:00Z",
+                "thisUpdate": "2026-10-04T12:00:00Z",
+                "nextUpdate": "2026-10-05T12:00:00Z"
+              }
+            ]
+          },
+          {
+            "certificateId": "cert-root",
+            "subject": "CN=Example Root CA",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1000",
+            "notBefore": "2020-01-01T00:00:00Z",
+            "notAfter": "2035-01-01T00:00:00Z",
+            "trustAnchor": true,
+            "revocationData": []
+          }
+        ],
+        "timestamps": [
+          {
+            "timestampId": "ts-1",
+            "type": "SIGNATURE_TIMESTAMP",
+            "productionTime": "2026-09-25T10:01:00Z",
+            "indication": "PASSED",
+            "subIndication": null,
+            "qualification": "TSA",
+            "messageImprintDataFound": true,
+            "messageImprintDataIntact": true,
+            "signingCertificate": {
+              "certificateId": "tsa-cert",
+              "subject": "CN=Example Signer tsa-cert",
+              "issuer": "CN=Example Root CA",
+              "serialNumber": "2001",
+              "notBefore": "2023-01-01T00:00:00Z",
+              "notAfter": "2028-01-01T00:00:00Z",
+              "trustAnchor": false,
+              "revocationData": [
+                {
+                  "revocationId": "ocsp-tsa-cert",
+                  "type": "OCSP",
+                  "status": "GOOD",
+                  "reason": null,
+                  "revocationTime": null,
+                  "productionTime": "2026-10-04T12:00:00Z",
+                  "thisUpdate": "2026-10-04T12:00:00Z",
+                  "nextUpdate": "2026-10-05T12:00:00Z"
+                }
+              ]
+            },
+            "errors": [],
+            "warnings": []
+          }
+        ],
+        "references": [
+          {
+            "referenceId": "sig-1",
+            "type": "CONTENT_DIGEST",
+            "uri": null,
+            "documentName": "document.pdf",
+            "dataFound": true,
+            "dataIntact": true
+          }
+        ],
+        "signedDataMissing": false
+      },
+      "effective": {
+        "source": "DEFAULT_VALIDATION",
+        "validationTime": "2026-10-04T13:30:00.427Z",
+        "format": "PAdES",
+        "level": "PAdES_BASELINE_T",
+        "qualification": "NA",
+        "signingTime": "2026-09-25T10:00:00Z",
+        "bestSignatureTime": "2026-09-25T10:01:00Z",
+        "indication": "TOTAL_PASSED",
+        "subIndication": null,
+        "errors": [],
+        "warnings": [],
+        "qualificationErrors": [],
+        "qualificationWarnings": [],
+        "counterSignature": false,
+        "parentSignatureId": null,
+        "signingCertificate": {
+          "certificateId": "cert-1",
+          "subject": "CN=Example Signer cert-1",
+          "issuer": "CN=Example Root CA",
+          "serialNumber": "1001",
+          "notBefore": "2023-01-01T00:00:00Z",
+          "notAfter": "2028-01-01T00:00:00Z",
+          "trustAnchor": false,
+          "revocationData": [
+            {
+              "revocationId": "ocsp-cert-1",
+              "type": "OCSP",
+              "status": "GOOD",
+              "reason": null,
+              "revocationTime": null,
+              "productionTime": "2026-10-04T12:00:00Z",
+              "thisUpdate": "2026-10-04T12:00:00Z",
+              "nextUpdate": "2026-10-05T12:00:00Z"
+            }
+          ]
+        },
+        "trustedChain": true,
+        "certificateChain": [
+          {
+            "certificateId": "cert-1",
+            "subject": "CN=Example Signer cert-1",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1001",
+            "notBefore": "2023-01-01T00:00:00Z",
+            "notAfter": "2028-01-01T00:00:00Z",
+            "trustAnchor": false,
+            "revocationData": [
+              {
+                "revocationId": "ocsp-cert-1",
+                "type": "OCSP",
+                "status": "GOOD",
+                "reason": null,
+                "revocationTime": null,
+                "productionTime": "2026-10-04T12:00:00Z",
+                "thisUpdate": "2026-10-04T12:00:00Z",
+                "nextUpdate": "2026-10-05T12:00:00Z"
+              }
+            ]
+          },
+          {
+            "certificateId": "cert-root",
+            "subject": "CN=Example Root CA",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1000",
+            "notBefore": "2020-01-01T00:00:00Z",
+            "notAfter": "2035-01-01T00:00:00Z",
+            "trustAnchor": true,
+            "revocationData": []
+          }
+        ],
+        "timestamps": [
+          {
+            "timestampId": "ts-1",
+            "type": "SIGNATURE_TIMESTAMP",
+            "productionTime": "2026-09-25T10:01:00Z",
+            "indication": "PASSED",
+            "subIndication": null,
+            "qualification": "TSA",
+            "messageImprintDataFound": true,
+            "messageImprintDataIntact": true,
+            "signingCertificate": {
+              "certificateId": "tsa-cert",
+              "subject": "CN=Example Signer tsa-cert",
+              "issuer": "CN=Example Root CA",
+              "serialNumber": "2001",
+              "notBefore": "2023-01-01T00:00:00Z",
+              "notAfter": "2028-01-01T00:00:00Z",
+              "trustAnchor": false,
+              "revocationData": [
+                {
+                  "revocationId": "ocsp-tsa-cert",
+                  "type": "OCSP",
+                  "status": "GOOD",
+                  "reason": null,
+                  "revocationTime": null,
+                  "productionTime": "2026-10-04T12:00:00Z",
+                  "thisUpdate": "2026-10-04T12:00:00Z",
+                  "nextUpdate": "2026-10-05T12:00:00Z"
+                }
+              ]
+            },
+            "errors": [],
+            "warnings": []
+          }
+        ],
+        "references": [
+          {
+            "referenceId": "sig-1",
+            "type": "CONTENT_DIGEST",
+            "uri": null,
+            "documentName": "document.pdf",
+            "dataFound": true,
+            "dataIntact": true
+          }
+        ],
+        "signedDataMissing": false
+      },
+      "revalidation": {
+        "status": "SKIPPED",
+        "reason": "ALREADY_TOTAL_PASSED",
+        "requestedValidationTime": null,
+        "actualValidationTime": null,
+        "technicalErrorCode": null
+      }
+    },
+    {
+      "signatureId": "sig-2",
+      "original": {
+        "source": "DEFAULT_VALIDATION",
+        "validationTime": "2026-10-04T13:30:00.427Z",
+        "format": "PAdES",
+        "level": "PAdES_BASELINE_B",
+        "qualification": "NA",
+        "signingTime": "2024-03-01T12:00:00Z",
+        "bestSignatureTime": "2026-10-04T13:30:00.427Z",
+        "indication": "INDETERMINATE",
+        "subIndication": "OUT_OF_BOUNDS_NO_POE",
+        "errors": [
+          {
+            "text": "Illustrative: bestSignatureTime is after signing certificate expiration.",
+            "key": "TSV_IBSTBCEC_ANS"
+          }
+        ],
+        "warnings": [],
+        "qualificationErrors": [],
+        "qualificationWarnings": [],
+        "counterSignature": false,
+        "parentSignatureId": null,
+        "signingCertificate": {
+          "certificateId": "cert-2",
+          "subject": "CN=Example Signer cert-2",
+          "issuer": "CN=Example Root CA",
+          "serialNumber": "1002",
+          "notBefore": "2023-01-01T00:00:00Z",
+          "notAfter": "2025-01-01T00:00:00Z",
+          "trustAnchor": false,
+          "revocationData": [
+            {
+              "revocationId": "ocsp-cert-2",
+              "type": "OCSP",
+              "status": "GOOD",
+              "reason": null,
+              "revocationTime": null,
+              "productionTime": "2024-03-01T11:00:00Z",
+              "thisUpdate": "2024-03-01T11:00:00Z",
+              "nextUpdate": "2024-03-02T11:00:00Z"
+            }
+          ]
+        },
+        "trustedChain": true,
+        "certificateChain": [
+          {
+            "certificateId": "cert-2",
+            "subject": "CN=Example Signer cert-2",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1002",
+            "notBefore": "2023-01-01T00:00:00Z",
+            "notAfter": "2025-01-01T00:00:00Z",
+            "trustAnchor": false,
+            "revocationData": [
+              {
+                "revocationId": "ocsp-cert-2",
+                "type": "OCSP",
+                "status": "GOOD",
+                "reason": null,
+                "revocationTime": null,
+                "productionTime": "2024-03-01T11:00:00Z",
+                "thisUpdate": "2024-03-01T11:00:00Z",
+                "nextUpdate": "2024-03-02T11:00:00Z"
+              }
+            ]
+          },
+          {
+            "certificateId": "cert-root",
+            "subject": "CN=Example Root CA",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1000",
+            "notBefore": "2020-01-01T00:00:00Z",
+            "notAfter": "2035-01-01T00:00:00Z",
+            "trustAnchor": true,
+            "revocationData": []
+          }
+        ],
+        "timestamps": [],
+        "references": [
+          {
+            "referenceId": "sig-2",
+            "type": "CONTENT_DIGEST",
+            "uri": null,
+            "documentName": "document.pdf",
+            "dataFound": true,
+            "dataIntact": true
+          }
+        ],
+        "signedDataMissing": false
+      },
+      "effective": {
+        "source": "SIGNING_TIME_REVALIDATION",
+        "validationTime": "2024-03-01T12:00:00Z",
+        "format": "PAdES",
+        "level": "PAdES_BASELINE_B",
+        "qualification": "NA",
+        "signingTime": "2024-03-01T12:00:00Z",
+        "bestSignatureTime": "2024-03-01T12:00:00Z",
+        "indication": "TOTAL_PASSED",
+        "subIndication": null,
+        "errors": [],
+        "warnings": [],
+        "qualificationErrors": [],
+        "qualificationWarnings": [],
+        "counterSignature": false,
+        "parentSignatureId": null,
+        "signingCertificate": {
+          "certificateId": "cert-2",
+          "subject": "CN=Example Signer cert-2",
+          "issuer": "CN=Example Root CA",
+          "serialNumber": "1002",
+          "notBefore": "2023-01-01T00:00:00Z",
+          "notAfter": "2025-01-01T00:00:00Z",
+          "trustAnchor": false,
+          "revocationData": [
+            {
+              "revocationId": "ocsp-cert-2",
+              "type": "OCSP",
+              "status": "GOOD",
+              "reason": null,
+              "revocationTime": null,
+              "productionTime": "2024-03-01T11:00:00Z",
+              "thisUpdate": "2024-03-01T11:00:00Z",
+              "nextUpdate": "2024-03-02T11:00:00Z"
+            }
+          ]
+        },
+        "trustedChain": true,
+        "certificateChain": [
+          {
+            "certificateId": "cert-2",
+            "subject": "CN=Example Signer cert-2",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1002",
+            "notBefore": "2023-01-01T00:00:00Z",
+            "notAfter": "2025-01-01T00:00:00Z",
+            "trustAnchor": false,
+            "revocationData": [
+              {
+                "revocationId": "ocsp-cert-2",
+                "type": "OCSP",
+                "status": "GOOD",
+                "reason": null,
+                "revocationTime": null,
+                "productionTime": "2024-03-01T11:00:00Z",
+                "thisUpdate": "2024-03-01T11:00:00Z",
+                "nextUpdate": "2024-03-02T11:00:00Z"
+              }
+            ]
+          },
+          {
+            "certificateId": "cert-root",
+            "subject": "CN=Example Root CA",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1000",
+            "notBefore": "2020-01-01T00:00:00Z",
+            "notAfter": "2035-01-01T00:00:00Z",
+            "trustAnchor": true,
+            "revocationData": []
+          }
+        ],
+        "timestamps": [],
+        "references": [
+          {
+            "referenceId": "sig-2",
+            "type": "CONTENT_DIGEST",
+            "uri": null,
+            "documentName": "document.pdf",
+            "dataFound": true,
+            "dataIntact": true
+          }
+        ],
+        "signedDataMissing": false
+      },
+      "revalidation": {
+        "status": "APPLIED",
+        "reason": "NON_PASSED_WITH_BEST_TIME_EQUAL_TO_DEFAULT_AND_DECLARED_SIGNING_TIME",
+        "requestedValidationTime": "2024-03-01T12:00:00Z",
+        "actualValidationTime": "2024-03-01T12:00:00Z",
+        "technicalErrorCode": null
+      }
+    },
+    {
+      "signatureId": "sig-3",
+      "original": {
+        "source": "DEFAULT_VALIDATION",
+        "validationTime": "2026-10-04T13:30:00.427Z",
+        "format": "PAdES",
+        "level": "PAdES_BASELINE_T",
+        "qualification": "NA",
+        "signingTime": "2026-09-25T10:02:00Z",
+        "bestSignatureTime": "2026-09-25T10:03:00Z",
+        "indication": "TOTAL_FAILED",
+        "subIndication": "REVOKED",
+        "errors": [
+          {
+            "key": "ADEST_IRTPTBST_ANS",
+            "text": "Illustrative: the certificate was revoked before bestSignatureTime."
+          }
+        ],
+        "warnings": [],
+        "qualificationErrors": [],
+        "qualificationWarnings": [],
+        "counterSignature": false,
+        "parentSignatureId": null,
+        "signingCertificate": {
+          "certificateId": "cert-3",
+          "subject": "CN=Example Signer cert-3",
+          "issuer": "CN=Example Root CA",
+          "serialNumber": "1003",
+          "notBefore": "2023-01-01T00:00:00Z",
+          "notAfter": "2028-01-01T00:00:00Z",
+          "trustAnchor": false,
+          "revocationData": [
+            {
+              "revocationId": "ocsp-3",
+              "type": "OCSP",
+              "status": "REVOKED",
+              "reason": "KEY_COMPROMISE",
+              "revocationTime": "2026-09-01T00:00:00Z",
+              "productionTime": "2026-10-04T12:00:00Z",
+              "thisUpdate": "2026-10-04T12:00:00Z",
+              "nextUpdate": "2026-10-05T12:00:00Z"
+            }
+          ]
+        },
+        "trustedChain": true,
+        "certificateChain": [
+          {
+            "certificateId": "cert-3",
+            "subject": "CN=Example Signer cert-3",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1003",
+            "notBefore": "2023-01-01T00:00:00Z",
+            "notAfter": "2028-01-01T00:00:00Z",
+            "trustAnchor": false,
+            "revocationData": [
+              {
+                "revocationId": "ocsp-3",
+                "type": "OCSP",
+                "status": "REVOKED",
+                "reason": "KEY_COMPROMISE",
+                "revocationTime": "2026-09-01T00:00:00Z",
+                "productionTime": "2026-10-04T12:00:00Z",
+                "thisUpdate": "2026-10-04T12:00:00Z",
+                "nextUpdate": "2026-10-05T12:00:00Z"
+              }
+            ]
+          },
+          {
+            "certificateId": "cert-root",
+            "subject": "CN=Example Root CA",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1000",
+            "notBefore": "2020-01-01T00:00:00Z",
+            "notAfter": "2035-01-01T00:00:00Z",
+            "trustAnchor": true,
+            "revocationData": []
+          }
+        ],
+        "timestamps": [
+          {
+            "timestampId": "ts-3",
+            "type": "SIGNATURE_TIMESTAMP",
+            "productionTime": "2026-09-25T10:03:00Z",
+            "indication": "PASSED",
+            "subIndication": null,
+            "qualification": "TSA",
+            "messageImprintDataFound": true,
+            "messageImprintDataIntact": true,
+            "signingCertificate": {
+              "certificateId": "tsa-cert",
+              "subject": "CN=Example Signer tsa-cert",
+              "issuer": "CN=Example Root CA",
+              "serialNumber": "2001",
+              "notBefore": "2023-01-01T00:00:00Z",
+              "notAfter": "2028-01-01T00:00:00Z",
+              "trustAnchor": false,
+              "revocationData": [
+                {
+                  "revocationId": "ocsp-tsa-cert",
+                  "type": "OCSP",
+                  "status": "GOOD",
+                  "reason": null,
+                  "revocationTime": null,
+                  "productionTime": "2026-10-04T12:00:00Z",
+                  "thisUpdate": "2026-10-04T12:00:00Z",
+                  "nextUpdate": "2026-10-05T12:00:00Z"
+                }
+              ]
+            },
+            "errors": [],
+            "warnings": []
+          }
+        ],
+        "references": [
+          {
+            "referenceId": "sig-3",
+            "type": "CONTENT_DIGEST",
+            "uri": null,
+            "documentName": "document.pdf",
+            "dataFound": true,
+            "dataIntact": true
+          }
+        ],
+        "signedDataMissing": false
+      },
+      "effective": {
+        "source": "DEFAULT_VALIDATION",
+        "validationTime": "2026-10-04T13:30:00.427Z",
+        "format": "PAdES",
+        "level": "PAdES_BASELINE_T",
+        "qualification": "NA",
+        "signingTime": "2026-09-25T10:02:00Z",
+        "bestSignatureTime": "2026-09-25T10:03:00Z",
+        "indication": "TOTAL_FAILED",
+        "subIndication": "REVOKED",
+        "errors": [
+          {
+            "key": "ADEST_IRTPTBST_ANS",
+            "text": "Illustrative: the certificate was revoked before bestSignatureTime."
+          }
+        ],
+        "warnings": [],
+        "qualificationErrors": [],
+        "qualificationWarnings": [],
+        "counterSignature": false,
+        "parentSignatureId": null,
+        "signingCertificate": {
+          "certificateId": "cert-3",
+          "subject": "CN=Example Signer cert-3",
+          "issuer": "CN=Example Root CA",
+          "serialNumber": "1003",
+          "notBefore": "2023-01-01T00:00:00Z",
+          "notAfter": "2028-01-01T00:00:00Z",
+          "trustAnchor": false,
+          "revocationData": [
+            {
+              "revocationId": "ocsp-3",
+              "type": "OCSP",
+              "status": "REVOKED",
+              "reason": "KEY_COMPROMISE",
+              "revocationTime": "2026-09-01T00:00:00Z",
+              "productionTime": "2026-10-04T12:00:00Z",
+              "thisUpdate": "2026-10-04T12:00:00Z",
+              "nextUpdate": "2026-10-05T12:00:00Z"
+            }
+          ]
+        },
+        "trustedChain": true,
+        "certificateChain": [
+          {
+            "certificateId": "cert-3",
+            "subject": "CN=Example Signer cert-3",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1003",
+            "notBefore": "2023-01-01T00:00:00Z",
+            "notAfter": "2028-01-01T00:00:00Z",
+            "trustAnchor": false,
+            "revocationData": [
+              {
+                "revocationId": "ocsp-3",
+                "type": "OCSP",
+                "status": "REVOKED",
+                "reason": "KEY_COMPROMISE",
+                "revocationTime": "2026-09-01T00:00:00Z",
+                "productionTime": "2026-10-04T12:00:00Z",
+                "thisUpdate": "2026-10-04T12:00:00Z",
+                "nextUpdate": "2026-10-05T12:00:00Z"
+              }
+            ]
+          },
+          {
+            "certificateId": "cert-root",
+            "subject": "CN=Example Root CA",
+            "issuer": "CN=Example Root CA",
+            "serialNumber": "1000",
+            "notBefore": "2020-01-01T00:00:00Z",
+            "notAfter": "2035-01-01T00:00:00Z",
+            "trustAnchor": true,
+            "revocationData": []
+          }
+        ],
+        "timestamps": [
+          {
+            "timestampId": "ts-3",
+            "type": "SIGNATURE_TIMESTAMP",
+            "productionTime": "2026-09-25T10:03:00Z",
+            "indication": "PASSED",
+            "subIndication": null,
+            "qualification": "TSA",
+            "messageImprintDataFound": true,
+            "messageImprintDataIntact": true,
+            "signingCertificate": {
+              "certificateId": "tsa-cert",
+              "subject": "CN=Example Signer tsa-cert",
+              "issuer": "CN=Example Root CA",
+              "serialNumber": "2001",
+              "notBefore": "2023-01-01T00:00:00Z",
+              "notAfter": "2028-01-01T00:00:00Z",
+              "trustAnchor": false,
+              "revocationData": [
+                {
+                  "revocationId": "ocsp-tsa-cert",
+                  "type": "OCSP",
+                  "status": "GOOD",
+                  "reason": null,
+                  "revocationTime": null,
+                  "productionTime": "2026-10-04T12:00:00Z",
+                  "thisUpdate": "2026-10-04T12:00:00Z",
+                  "nextUpdate": "2026-10-05T12:00:00Z"
+                }
+              ]
+            },
+            "errors": [],
+            "warnings": []
+          }
+        ],
+        "references": [
+          {
+            "referenceId": "sig-3",
+            "type": "CONTENT_DIGEST",
+            "uri": null,
+            "documentName": "document.pdf",
+            "dataFound": true,
+            "dataIntact": true
+          }
+        ],
+        "signedDataMissing": false
+      },
+      "revalidation": {
+        "status": "SKIPPED",
+        "reason": "BEST_SIGNATURE_TIME_DIFFERS_FROM_DEFAULT_VALIDATION_TIME",
+        "requestedValidationTime": null,
+        "actualValidationTime": null,
+        "technicalErrorCode": null
+      }
+    }
+  ]
+}
