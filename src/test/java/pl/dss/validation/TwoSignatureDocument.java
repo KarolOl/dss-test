@@ -80,6 +80,18 @@ record TwoSignatureDocument(CMSSignedData signedData, CertificateToken trustAnch
         return signedData.getEncoded();
     }
 
+    byte[] detached() throws Exception {
+        var generator = new CMSSignedDataGenerator();
+        generator.addCertificates(signedData.getCertificates());
+        generator.addCRLs(signedData.getCRLs());
+        generator.addSigners(signedData.getSignerInfos());
+        return generator.generate(new CMSProcessableByteArray(content()), false).getEncoded();
+    }
+
+    byte[] content() {
+        return ((byte[]) signedData.getSignedContent().getContent()).clone();
+    }
+
     byte[] withTamperedContent() throws Exception {
         // Preserve both original SignerInfos, including their signed message-digest attributes.
         // Only the encapsulated content changes; it is deliberately not signed again.

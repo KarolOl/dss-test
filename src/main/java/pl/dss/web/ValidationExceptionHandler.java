@@ -21,7 +21,7 @@ public class ValidationExceptionHandler {
             case UPLOAD_TOO_LARGE -> HttpStatus.PAYLOAD_TOO_LARGE;
             case UNSUPPORTED_OR_UNRECOGNIZED_DOCUMENT -> HttpStatus.UNSUPPORTED_MEDIA_TYPE;
             case MALFORMED_DOCUMENT -> HttpStatus.UNPROCESSABLE_ENTITY;
-            case FILE_READ_ERROR, VALIDATION_ERROR, INCONSISTENT_DSS_REPORT -> HttpStatus.INTERNAL_SERVER_ERROR;
+            case FILE_READ_ERROR, VALIDATION_ERROR, INCONSISTENT_DSS_REPORT, REPORT_GENERATION_ERROR -> HttpStatus.INTERNAL_SERVER_ERROR;
         };
         if (status.is5xxServerError()) {
             LOG.error("Document validation failed ({})", exception.getCode(), exception);

@@ -11,6 +11,8 @@ CompositeValidationReport validate(MultipartFile file, List<MultipartFile> detac
 
 Endpoint: `POST /api/signatures/validate`, `multipart/form-data`, część `file` oraz opcjonalne, powtarzalne części `detachedContents`. Treści odłączone należy przekazywać z oryginalnymi nazwami wymaganymi przez referencje. Nazwa i MIME nie wybierają validatora. `SignedDocumentValidator.fromDocument(...)` rozpoznaje zawartość przez fabryki DSS.
 
+Na końcu walidacji powstaje PDF z podsumowaniem, oryginalnymi XML-ami Diagnostic Data i Detailed Report dla wszystkich przebiegów, wynikiem JSON, archiwum standardowej polityki XML oraz manifestem SHA-256. Panel załączników domyślnie pozostaje zamknięty. PDF można pobrać przez `POST /api/signatures/validate/pdf` lub `report.pdfReport().bytes()`. Pakiet jawnie ma status `UNSEALED`: skróty zapewniają możliwość porównania danych, ale potwierdzenie wystawcy wymaga podpisu/pieczęci i zaufanego znacznika czasu. Szczegóły i test generujący przykład: [raport audytowy](docs/AUDIT-REPORT.md).
+
 Przykładowe wywołanie dla uruchomionej aplikacji:
 
 ```powershell
@@ -68,7 +70,7 @@ DTO zawiera dokładnie jeden `SignatureEntry` na identyfikator: `original`, `eff
 
 `originalDssReports()` zachowuje obiekty `Reports` pierwszego przebiegu oraz mapę dodatkowych raportów po docelowym `signatureId`. Po błędzie mapowania dodatkowego wyniku zachowywany jest również raport, który DSS zdążył zwrócić. Nie modyfikuje się SimpleReport, DetailedReport, DiagnosticData ani ETSI. Obiekty należy traktować jako tylko do odczytu.
 
-Surowe `Reports` są celowo oznaczone `@JsonIgnore`: są dostępne dla wywołującego usługę w Javie, nie są serializowane jako graf JAXB w odpowiedzi REST. Nie ma globalnego cache, trwałego archiwum ani udostępniania raportów innym żądaniom. Jeśli potrzebny jest trwały audyt, wywołujący może archiwizować oryginalne raporty poprzez dostępne `getXmlSimpleReport()`, `getXmlDetailedReport()`, `getXmlDiagnosticData()` i `getXmlValidationReport()`.
+Surowe `Reports` są celowo oznaczone `@JsonIgnore`: są dostępne dla wywołującego usługę w Javie, nie są serializowane jako graf JAXB w odpowiedzi REST. Nie ma globalnego cache, trwałego archiwum ani udostępniania raportów innym żądaniom. Jeśli potrzebny jest trwały audyt, wywołujący może archiwizować wygenerowany PDF lub oryginalne raporty przez `getXmlDetailedReport()` i `getXmlDiagnosticData()`. Simple Report jest używany do mapowania, ale nie jest osadzany; generowanie ETSI Validation Report jest wyłączone.
 
 | Sytuacja | Wynik |
 |---|---|

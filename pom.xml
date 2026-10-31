@@ -63,6 +63,11 @@
             <groupId>eu.europa.ec.joinup.sd-dss</groupId>
             <artifactId>dss-pades-pdfbox</artifactId>
         </dependency>
+        <!-- Used directly for the audit report; version follows the DSS BOM. -->
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+        </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.sd-dss</groupId>
             <artifactId>dss-asic-xades</artifactId>
@@ -79,7 +84,6 @@
         <dependency>
             <groupId>eu.europa.ec.joinup.sd-dss</groupId>
             <artifactId>dss-policy-jaxb</artifactId>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.sd-dss</groupId>

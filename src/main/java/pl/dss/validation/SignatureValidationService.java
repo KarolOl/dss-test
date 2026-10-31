@@ -1,6 +1,7 @@
 package pl.dss.validation;
 
 import eu.europa.esig.dss.enumerations.Indication;
+import eu.europa.esig.dss.enumerations.TokenExtractionStrategy;
 import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.model.InMemoryDocument;
 import eu.europa.esig.dss.model.policy.ValidationPolicy;
@@ -36,13 +37,16 @@ public class SignatureValidationService {
     private final ValidationPolicy validationPolicy;
     private final DssValidationProperties properties;
     private final DssReportMapper mapper;
+    private final AuditPdfReportGenerator pdfGenerator;
 
     public SignatureValidationService(CertificateVerifier certificateVerifier, ValidationPolicy validationPolicy,
-                                      DssValidationProperties properties, DssReportMapper mapper) {
+                                      DssValidationProperties properties, DssReportMapper mapper,
+                                      AuditPdfReportGenerator pdfGenerator) {
         this.certificateVerifier = certificateVerifier;
         this.validationPolicy = validationPolicy;
         this.properties = properties;
         this.mapper = mapper;
+        this.pdfGenerator = pdfGenerator;
     }
 
     /** Detached signatures without their signed content are reported as incomplete by DSS. */
@@ -108,9 +112,16 @@ public class SignatureValidationService {
         if (entries.stream().anyMatch(entry -> entry.effective().signedDataMissing())) {
             status = DocumentStatus.MISSING_SIGNED_DATA;
         }
-        return new CompositeValidationReport(main.name(), initialReports.getSimpleReport().getContainerType(),
+        var report = new CompositeValidationReport(main.name(), initialReports.getSimpleReport().getContainerType(),
                 status, defaultValidationTime, entries.size(), validCount,
-                entries, new OriginalDssReports(initialReports, additionalReports));
+                entries, new OriginalDssReports(initialReports, additionalReports), null);
+        var inputs = new ArrayList<AuditPdfAttachmentService.InputDigest>();
+        inputs.add(AuditPdfAttachmentService.InputDigest.of("DOCUMENT", 0, main.name(), main.bytes()));
+        for (int i = 0; i < detached.size(); i++) {
+            Upload content = detached.get(i);
+            inputs.add(AuditPdfAttachmentService.InputDigest.of("DETACHED_CONTENT", i, content.name(), content.bytes()));
+        }
+        return report.withPdfReport(pdfGenerator.generate(report, inputs, validationPolicy, properties.level()));
     }
 
     private Map<String, SignatureResult> initialResults(Reports reports) {
@@ -166,8 +177,10 @@ public class SignatureValidationService {
         try {
             validator.setCertificateVerifier(certificateVerifier);
             validator.setValidationLevel(properties.level());
-            validator.setEnableEtsiValidationReport(true);
+            validator.setEnableEtsiValidationReport(false);
             validator.setIncludeSemantics(true);
+            // Preserve the actual evidence, not just diagnostic descriptions and identifiers.
+            validator.setTokenExtractionStrategy(TokenExtractionStrategy.EXTRACT_ALL);
             validator.setLocale(Locale.ENGLISH);
             validator.setDetachedContents(detached.stream().map(Upload::document).toList());
             if (validationTime != null) {

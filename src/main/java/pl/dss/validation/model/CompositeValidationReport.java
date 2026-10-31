@@ -28,10 +28,16 @@ public record CompositeValidationReport(
         int signaturesCount,
         long validSignaturesCount,
         List<SignatureEntry> signatures,
-        @JsonIgnore OriginalDssReports originalDssReports) {
+        @JsonIgnore OriginalDssReports originalDssReports,
+        @JsonIgnore AuditPdfReport pdfReport) {
 
     public CompositeValidationReport {
         signatures = List.copyOf(signatures);
+    }
+
+    public CompositeValidationReport withPdfReport(AuditPdfReport pdf) {
+        return new CompositeValidationReport(documentName, containerType, documentStatus, defaultValidationTime,
+                signaturesCount, validSignaturesCount, signatures, originalDssReports, pdf);
     }
 
     public enum DocumentStatus { ANALYZED, NO_SIGNATURES, MISSING_SIGNED_DATA }

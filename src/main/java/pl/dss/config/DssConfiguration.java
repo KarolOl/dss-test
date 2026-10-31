@@ -10,7 +10,6 @@ import eu.europa.esig.dss.spi.validation.CertificateVerifier;
 import eu.europa.esig.dss.spi.validation.CommonCertificateVerifier;
 import eu.europa.esig.dss.spi.x509.CommonTrustedCertificateSource;
 import eu.europa.esig.dss.spi.x509.aia.DefaultAIASource;
-import eu.europa.esig.dss.validation.policy.ValidationPolicyLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -68,11 +67,11 @@ public class DssConfiguration {
     @ConditionalOnMissingBean(ValidationPolicy.class)
     ValidationPolicy validationPolicy(DssValidationProperties properties) throws IOException {
         if (properties.policy() == null) {
-            return ValidationPolicyLoader.fromDefaultValidationPolicy().create();
+            return ArchivedValidationPolicy.loadDefault();
         }
         // Load at startup: an invalid/missing configured policy must never silently fall back.
         try (InputStream input = properties.policy().getInputStream()) {
-            return ValidationPolicyLoader.fromValidationPolicy(input).create();
+            return ArchivedValidationPolicy.load(input);
         }
     }
 

@@ -8,7 +8,8 @@ public class DocumentValidationException extends RuntimeException {
         UNSUPPORTED_OR_UNRECOGNIZED_DOCUMENT,
         MALFORMED_DOCUMENT,
         VALIDATION_ERROR,
-        INCONSISTENT_DSS_REPORT
+        INCONSISTENT_DSS_REPORT,
+        REPORT_GENERATION_ERROR
     }
 
     private final Code code;
